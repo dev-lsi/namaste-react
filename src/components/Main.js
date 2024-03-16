@@ -4,8 +4,9 @@ import { MOCK_DATA } from "../utils/mockData.js";
 import { useState, useEffect } from "react";
 
 const Main = () => {
-  const [pageData, setPageData] = useState(MOCK_DATA);
 
+  const [pageData, setPageData] = useState(MOCK_DATA);
+  const swiggyURL="https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7041&lng=77.1025&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
   
   const swapi="https://swapi.dev/api/people/";
   
@@ -13,7 +14,7 @@ const Main = () => {
   useEffect(()=>{
     
     async function fetchData(){
-        const data= await fetch(swapi);
+        const data = await fetch(swapi);
         const list = await data.json();
     }
     fetchData();
@@ -27,7 +28,7 @@ const Main = () => {
   
   return (
     <div className="main">
-      <Search />
+      <Search/>
       <div className="filter">
         <button
           className="filter-btn"

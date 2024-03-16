@@ -92,3 +92,16 @@ h1 #h1span{
 .login-btn{
     
 }
+
+.search-bar-container{
+    
+    display:flex;
+    column-gap: 2em;
+    margin: 1em;
+}
+
+.search-bar-container input{
+
+   color:rgb(1, 1, 100);
+   
+}
