@@ -1,18 +1,26 @@
-import { startTransition, useEffect,useState } from "react";
-import { MOCK_DATA } from "../utils/mockData";
-const Search = () => {
+import { useEffect,useState } from "react";
+import ListContainer from "./ListContainer";
+
+
+
+const Search = (props) => {
     
-    
+    const {restaurants} = props
     const [searchText,setSearchText] = useState("");
-    
+    //const [filteredPageData,setFilteredPageData] = useState[pageData];
+    useEffect(goTo,[restaurants]);
+    function goTo{
+        
+    }
     function changeValue(e){
         setSearchText(e.target.value);
     }
 
     function handleClick(e){
-       console.log(searchText)
-       const filteredByText = MOCK_DATA.filter(x=>x.r===searchText);
-       console.log(filteredByText)
+       
+       const filteredByText = restaurants.filter((res) => res.info.name.includes(searchText));
+       
+       console.log(filteredByText);
     }
 
     return (
