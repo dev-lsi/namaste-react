@@ -19,7 +19,9 @@ const Main = () => {
   async function fetchData() {
     const res = await fetch(swiggyURL);
     const dataObj = await res.json();
+    
     const restaurantsArr = dataObj.data.cards[4].card.card.gridElements.infoWithStyle.restaurants;
+    //console.log(restaurantsArr)
     setPageData(restaurantsArr);
     
   }
@@ -35,7 +37,7 @@ const Main = () => {
       <Search restaurants = {pageData}/>
       <div className="filter">
         <button
-          className="filter-btn"
+          className="bg-blue-300 px-4 py-2 m-3"
           onClick={() => {
             const filtered = pageData.filter((res) => true);
 

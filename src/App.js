@@ -8,16 +8,20 @@ import Contacts from "./components/Contacts";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Error from "./components/Error";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 
 
 
 const App = () => {
   return (
+    <Provider store={appStore}>
     <div id="app">
       <Header />
       <Outlet />
       <Footer/>
     </div>
+    </Provider>
   );
 };
 

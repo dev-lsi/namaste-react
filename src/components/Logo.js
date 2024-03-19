@@ -2,9 +2,9 @@ import {LOGO_URL} from "../utils/constants.js";
 
 const Logo = () => {
     return (
-      <div className="logo-container">
+      <div>
         <img
-          className="logo-image"
+          className="w-24 rounded-full"
           src={LOGO_URL}
         />
       </div>

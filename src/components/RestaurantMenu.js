@@ -14,11 +14,12 @@ const RestaurantMenu=()=>{
 
     const restaurantURL= MENU_API + resId;
 
-    console.log(resId)
+    
 
     const fetchMenu =async ()=> { 
         const res = await fetch(restaurantURL);
         const data = await res.json();
+        
         setResInfo(data);
     }
 
@@ -26,11 +27,12 @@ const RestaurantMenu=()=>{
         return <Shimmer></Shimmer>
     }
 
-    const {name,avgRating,slugs } = resInfo.data.cards[0].card.card.info;
+    const {name,avgRating } = resInfo.data.cards[0].card.card.info;
     
     
-    const {item} = resInfo.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card.card.itemCards;
-    console.log(resInfo.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card.card.itemCards);
+    const item = resInfo.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card.card.itemCards;
+    console.log(item)
+    
 
     return (
          <div className="restaurant">
@@ -38,7 +40,7 @@ const RestaurantMenu=()=>{
              <h3>{"Rating " + avgRating}</h3>
              <h2>Menu</h2>
              <ul className="menu-list">
-                {item ? item.map((i)=><li>{i.card.info.name}</li>):<p></p>}
+                <li>Hah</li>
              </ul>
          </div>
     )

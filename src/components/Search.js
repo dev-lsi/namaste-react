@@ -1,5 +1,5 @@
 import { useEffect,useState } from "react";
-import ListContainer from "./ListContainer";
+
 
 
 
@@ -8,10 +8,7 @@ const Search = (props) => {
     const {restaurants} = props
     const [searchText,setSearchText] = useState("");
     //const [filteredPageData,setFilteredPageData] = useState[pageData];
-    useEffect(goTo,[restaurants]);
-    function goTo{
-        
-    }
+    
     function changeValue(e){
         setSearchText(e.target.value);
     }
@@ -24,14 +21,14 @@ const Search = (props) => {
     }
 
     return (
-        <div className="search-bar-container">
+        <div className="flex justify-start gap-4 py-6">
            <h2>Search Bar</h2>
-           <input 
+           <input className="border-2" 
                 onChange={(e)=>changeValue(e)} 
                 value={searchText} 
                 placeholder="search here"
             ></input>
-           <button
+           <button className="bg-blue-300 px-4 py-2"
                onClick={(e)=>handleClick(e)}
            >Search</button>
         </div>

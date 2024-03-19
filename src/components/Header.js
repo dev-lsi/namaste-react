@@ -5,22 +5,21 @@ import { useState } from "react";
 const Header = () => {
   const [loginName, setLoginName] = useState("Login");
   return (
-    <div id="header">
+    <div className="flex justify-between p-4 bg-orange-300 shadow-lg shadow-orange-700">
       <Logo />
       <Nav />
-      <div className="login-container">
-        <button
-          className="login-btn"
-          onClick={() => {
-            loginName === "Login"
-              ? setLoginName("Logout")
-              : setLoginName("Login");
-          }}
-        >
+      <button
+        className=""
+        onClick={() => {
+          loginName === "Login"
+            ? setLoginName("Logout")
+            : setLoginName("Login");
+        }}
+      >
           {loginName}
-        </button>
-      </div>
+      </button>
     </div>
+    
   );
 };
 
