@@ -72,3 +72,5 @@ and also : npm i react and npm i react-dom;
 ### npx parcel build index.html  - When we build for production!!!
 
 #### .parcel-cache and dist folders must be in .gitignore!!!
+
+## Lesson3  lying The Foundations
